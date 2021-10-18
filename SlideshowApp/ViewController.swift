@@ -114,6 +114,21 @@ class ViewController: UIViewController{
     @IBAction func TapView(_ sender: Any) {
         performSegue(withIdentifier: "next", sender: nil)
         
+        if botanNo == 1 {   //もし０ならボタンの表示は停止だから再生にする
+            botanNo = 0        //停止にしたから０にする
+            play.setTitle("再生", for: .normal)
+            susumu.isEnabled = true
+            modoru.isEnabled = true
+            
+            
+            if self.timer != nil{
+            self.timer.invalidate()
+                self.timer = nil
+                
+            }
+            
+        }
+        
     }
     
     
